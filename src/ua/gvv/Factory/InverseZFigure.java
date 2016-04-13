@@ -43,4 +43,4 @@ public class InverseZFigure implements Figure {
 
 }
 
-}
+

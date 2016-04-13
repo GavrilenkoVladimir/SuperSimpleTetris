@@ -17,7 +17,8 @@ This figure has two postures.
 public class Stick implements Figure {
 
 	@Override
-	public void create() {
+	public int [][] create() {
+		return null;
 		// TODO Auto-generated method stub
 
 	}
@@ -28,10 +29,6 @@ public class Stick implements Figure {
 
 	}
 
-	@Override
-	public void move() {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 }
