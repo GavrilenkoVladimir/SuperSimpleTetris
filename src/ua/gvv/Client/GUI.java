@@ -46,35 +46,14 @@ public class GUI  {
 		userLevel.setBounds(400, 160, 117, 52);
 		panel.add(userLevel);
 		
-				JLabel userScore = new JLabel("Score");
+		JLabel userScore = new JLabel("Score");
 		userScore.setVerticalAlignment(SwingConstants.TOP);
 		userScore.setHorizontalAlignment(SwingConstants.LEFT);
 		userScore.setFont(new Font("MS Gothic", Font.BOLD, 26));
 		userScore.setBounds(400, 220, 117, 81);
 		panel.add(userScore);
 		
-		class Canvaseble extends Canvas{
-			
-			
-			public void paint(Graphics g){
-				
-				g.setColor(Color.GREEN);
-				g.fillRect(23, 23, 10, 10);
-			}
-		}
 		
-		Canvaseble gameArea = new Canvaseble();
-		gameArea.setFocusable(true);
-		frame.addKeyListener(new KeyAdapter() {
-			
-			public void keyTyped(KeyEvent e) {
-                
-				if(e.getKeyCode()==KeyEvent.VK_ENTER) JOptionPane.showMessageDialog(null, "Получилось");
-		    }
-		});
-		gameArea.setBounds(22, 22, 346, 520);
-		gameArea.setBackground(Color.WHITE);
-		panel.add(gameArea);
 		
 	}
 }

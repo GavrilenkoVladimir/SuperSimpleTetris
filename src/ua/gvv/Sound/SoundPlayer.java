@@ -12,9 +12,9 @@ public class SoundPlayer implements Runnable {
 		
 		int i = (int)(Math.random()*listOfFiles.length + 1);
 		
-		while (true) 
+		while (true) {
 		Sound.playSound(listOfFiles[0]).join(); 
-				
+		}
 		
 		
 	}
