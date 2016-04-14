@@ -3,12 +3,15 @@ package ua.gvv.Client;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -20,7 +23,7 @@ public class GUI  {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(550,600 );
 		frame.setVisible(true);
-		Image image = Toolkit.getDefaultToolkit().getImage("icon.jpg");
+		Image image = Toolkit.getDefaultToolkit().getImage("Image/icon.jpg");
 		frame.setIconImage(image);
 		frame.setResizable(false);
 		frame.setLocation(500, 100);
@@ -50,8 +53,25 @@ public class GUI  {
 		userScore.setBounds(400, 220, 117, 81);
 		panel.add(userScore);
 		
-		Canvas gameArea = new Canvas();
-		gameArea
+		class Canvaseble extends Canvas{
+			
+			
+			public void paint(Graphics g){
+				
+				g.setColor(Color.GREEN);
+				g.fillRect(23, 23, 10, 10);
+			}
+		}
+		
+		Canvaseble gameArea = new Canvaseble();
+		gameArea.setFocusable(true);
+		frame.addKeyListener(new KeyAdapter() {
+			
+			public void keyTyped(KeyEvent e) {
+                
+				if(e.getKeyCode()==KeyEvent.VK_ENTER) JOptionPane.showMessageDialog(null, "Получилось");
+		    }
+		});
 		gameArea.setBounds(22, 22, 346, 520);
 		gameArea.setBackground(Color.WHITE);
 		panel.add(gameArea);
